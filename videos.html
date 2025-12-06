@@ -1,0 +1,68 @@
+---
+layout: default
+title: Videos
+description: My recent uploads to YouTube!
+---
+
+<style>
+    .video-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        gap: 10px;
+    }
+    
+    .video {
+        background: none;
+        border: none;
+    }
+
+    .video iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .video h5 {
+        color: var(--color-text);
+        font-weight: normal;
+    }
+</style>
+
+<section style="text-align: center;">
+    <h1>Latest videos I've uploaded!</h1>
+    <div class="video-list"></div>
+</section>
+
+<script>
+    const fmtElement = document.createElement('div');
+    var apiURL = 'https://www.youtube.com/feeds/videos.xml?channel_id='
+
+    function fetchVideos(channel_id, listing) {
+        fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(apiURL + channel_id))
+            .then(response => response.json())
+            .then(data => {
+                for (var x = 0; x < data.items.length; x++) {
+                    var video = data.items[x];
+                    var id = video.link.substr(video.link.indexOf('=') + 1);
+
+                    var section = document.createElement('section');
+                    section.classList.add('video');
+
+                    var part = document.createElement('iframe');
+                    part.frameBorder = "0";
+                    part.allowFullscreen = true;
+                    part.src = 'https://youtube.com/embed/' + id + '?showinfo=0&rel=0';
+                    section.appendChild(part);
+
+                    var part = document.createElement('h5');
+                    part.textContent = `Published on: ${video.pubDate}`;
+                    section.appendChild(part);
+
+                    listing.appendChild(section);
+                }
+            })
+            .catch(error => console.error('Error fetching videos: ', error));
+    }
+
+    fetchVideos('UCeOk7FvMigqa6qs5ASkd9aw', document.querySelector('.video-list'))
+</script>
