@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{ page.description | default: site.description }}">
+        <meta name="keywords" content="Givized13">
+        <meta name="author" content="{{ site.author }}">
+        <meta name="theme-color" content="#71368A">
+        
+        <title>{{ page.title }}</title>
+
+        <meta name="og:title" content="givized13.com">
+        <meta name="og:description" content="{{ page.description | default: site.description }}">
+        <meta name="og:site_name" content="givized13.com">
+        <meta name="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+        <meta name="og:locale" content="en_GB">
+        <meta name="og:type" content="website">
+
+        <link rel="stylesheet" href="/css/master.css">
+    </head>
+    <body>
+        <a id="skip-to-content" href="#content">Skip to content!</a>
+
+        <div class="container">
+            <header>
+                <img src="/images/banner.png">
+            </header>
+
+            <aside class="sidebar">
+                <section>
+                    {% include nav.html %}
+                </section>
+
+                {% include webring.html %}
+            </aside>
+
+            <main id="content">
+                {{ content }}
+            </main>
+
+            <footer>
+                <span>Made with &#128156; by {{ site.author }}!</span>
+            </footer>
+        </div>
+
+
+        <div id="mobile-message">
+            <h1>Hey there mobile user!</h1>
+            <p>
+                This website was designed for desktop devices, not mobile phones.
+                <br/>
+                However if you still wish to view the site on mobile enabling &quot;Desktop view&quot; in your options will give you a little more support.
+            </p>
+            <a style="font-size: 24px;" href="javascript:void();" onclick="document.getElementById('mobile-message').remove();">Close this message!</a>
+        </div>
+
+        <script src="/js/base.js"></script>
+    </body>
+</html>
