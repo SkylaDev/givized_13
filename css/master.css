@@ -220,3 +220,5 @@ footer {
 }
 
 @media screen and (max-width: 580px) { #mobile-message { display: block; } }
+
+.webring img { image-rendering: pixelated; }
