@@ -16,6 +16,6 @@ Dis my super cool website :3
 
 ## Fun fact:
 
-You are super cool :3
+You are super cool :3gunna blow up 
 
 </section>

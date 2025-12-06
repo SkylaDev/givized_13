@@ -32,6 +32,7 @@
 html {
     min-width: 100%;
     position: relative;
+    height: 100%;
 }
 
 body {
@@ -41,6 +42,7 @@ body {
     overflow-x: hidden;
     font-family: var(--font-family);
     color: var(--color-text);
+    height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
