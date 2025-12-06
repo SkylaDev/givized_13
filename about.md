@@ -4,7 +4,7 @@ title: About me
 description: A little about myself :3
 ---
 
-<section>
+<section markdown="1">
 
 # About me
 
