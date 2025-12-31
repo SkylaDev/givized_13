@@ -1,7 +1,7 @@
 markdown: kramdown
 
-url: "https://givized13.com"
+url: "https://jekylltemplate.skyla.moe"
 baseurl: ""
-description: "A cute website, for an adorable cutie patootie!"
-author: "Givized13 & SkylasJustVibin"
+description: "A Jekyll website template made for a friend of mine!"
+author: "SkylasJustVibin"
 theme-col: "#71368A"
